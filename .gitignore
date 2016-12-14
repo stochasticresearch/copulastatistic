@@ -1,3 +1,6 @@
+.DS_Store
+*sublime*
+
 # History files
 .Rhistory
 .Rapp.history
