@@ -22,3 +22,6 @@ The code required to generate the results for Fig.14 in the paper.
 
 # ecoli.R
 The code required to generate the results for Fig.16 in the paper.
+
+# run_reshef_power.R, parse_reshef_power.R
+The code required to generate and print the power curves in Fig. 12 of the paper, respectively.
