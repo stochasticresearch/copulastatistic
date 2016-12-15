@@ -1,8 +1,8 @@
 # copulastatistic
-All code related to the paper: "A Copula Statistic for Measuring Nonlinear Multivariate Dependence"
+All code related to the paper: "A Copula Statistic for Measuring Nonlinear Multivariate Dependence."  The authors of this paper are: Mohsen Ben Hassine, Lamine Mili, and Kiran Karra.
 
 ### copulastatistic.R
-Provides code to compute the CoS statistic for 2-D,3-D, and 4-D data currently.  We will generalize this into one function that can detect the dimensionality and automatically process that data.
+Provides code to compute the CoS statistic for 2-D,3-D, and 4-D data currently.  We will generalize this into one function that can detect the dimensionality and automatically process that data.  The original code was provided by Mohsen Ben Hassine.
 
 ### algorithms.R
 Other dependence metric algorithms used to compare against the CoS
