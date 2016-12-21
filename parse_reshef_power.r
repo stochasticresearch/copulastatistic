@@ -1,5 +1,3 @@
-# Print the power results to a PDF file
-
 source("gentype.r")
 
 n_noise   <- 30
@@ -18,8 +16,8 @@ power.ccor   = power_ccor   = array(NA, c(n_types,n_noise))
 
 for(ttt in c(1,2,3,4,6,7)){
   for(nnn in 1:n_noise){
-    #fname <- paste("~/ownCloud/PhD/My Papers/CoS/software/results/result", k1, k2, n, ttt, nnn, sep="_")
-    fname <- paste("results/result", k1, k2, n, ttt, nnn, sep="_")
+    fname <- paste("~/ownCloud/PhD/My Papers/CoS/software/results/result", k1, k2, n, ttt, nnn, sep="_")
+    #fname <- paste("C:\\Users\\Kiran\\ownCloud\\PhD\\My Papers\\CoS\\software\\results\\result", k1, k2, n, ttt, nnn, sep="_")
     print(paste("Collecting", fname, "..."))
     if(file.exists(fname) == TRUE) load(fname)
     power_ace    [ttt,nnn] = power.ace    [ttt,nnn]
@@ -50,7 +48,7 @@ tikz("output_power.tex", standAlone=TRUE, width=7, height=5)
 par(mfrow = c(3,2), lwd=1, oma = c(5,4,0,0) + 0.8,
     mar = c(0,0,1,1) + 0.8, ps=12)
 
-xvals <- c(1:30)/30*300
+xvals <- c(1:30)/30*3
 
 for(typ in c(1,2,3,4,6,7)) {
   #plot(xvals, power.cor[typ,], pch = 1, col = 1, type = 'b', ylim = c(0,1.1), cex=0.45)
@@ -63,13 +61,14 @@ for(typ in c(1,2,3,4,6,7)) {
   
   if(typ==4)
     legend("topright",c("dCor","TICe", 
-                        "cCor", "RDC", "CoS"), pch =
+                        "Ccor", "RDC", "CoS"), pch =
              c(2,3,8,5,4), col = c(2,3,8,5,4))
   
-  rect(1, .02, 38, .5, col="white")
+  #rect(1, .02, 38, .5, col="white")
+  rect(0, 0, 0.5, 0.5, col="white")
   xy <- gentype(typ,100,0,0,1)
-  xy$x <- (xy$x-min(xy$x))/(max(xy$x)-min(xy$x))*32+2
-  xy$y <- (xy$y-min(xy$y))/(max(xy$y)-min(xy$y))*0.42+.05
+  xy$x <- (xy$x-min(xy$x))/(max(xy$x)-min(xy$x))*0.5;#+2
+  xy$y <- (xy$y-min(xy$y))/(max(xy$y)-min(xy$y))*0.5;#+.05
   ooo  <- order(xy$x)
   points(xy$x[ooo], xy$y[ooo],pch=19,cex=0.3)
 }
