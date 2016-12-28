@@ -30,10 +30,10 @@ dax.close = dax.data$Close
 nk225.close = nk225.data$Close
 cac40.close = cac40.data$Close
 
-sp500.returns = sp500.close[2:length(sp500.close)]-sp500.close[1:length(sp500.close)-1]
-dax.returns   = dax.close[2:length(dax.close)]-dax.close[1:length(dax.close)-1]
-nk225.returns = nk225.close[2:length(nk225.close)]-nk225.close[1:length(nk225.close)-1]
-cac40.returns = cac40.close[2:length(cac40.close)]-cac40.close[1:length(cac40.close)-1]
+sp500.returns = log(sp500.close[2:length(sp500.close)])-log(sp500.close[1:length(sp500.close)-1])
+dax.returns   = log(dax.close[2:length(dax.close)])-log(dax.close[1:length(dax.close)-1])
+nk225.returns = log(nk225.close[2:length(nk225.close)])-log(nk225.close[1:length(nk225.close)-1])
+cac40.returns = log(cac40.close[2:length(cac40.close)])-log(cac40.close[1:length(cac40.close)-1])
 
 returns.data = data.frame("SP500"=sp500.returns,"DAX"=dax.returns,"NK225"=nk225.returns,"CAC40"=cac40.returns)
 
@@ -143,3 +143,18 @@ cac_nk_dax = cosdv3d(cac40.returns, nk225.returns, dax.returns)
 
 # compute 4-D financial data analysis
 sp_cac_nk_dax = cosdv4d(sp500.returns, cac40.returns, nk225.returns, dax.returns)
+
+# Print outs
+c(sp_cac.cos, sp_cac.mic, sp_cac.dcor, sp_cac.ccor, sp_cac.rdc)
+c(sp_dax.cos, sp_dax.mic, sp_dax.dcor, sp_dax.ccor, sp_dax.rdc)
+c(sp_nk.cos, sp_nk.mic, sp_nk.dcor, sp_nk.ccor, sp_nk.rdc)
+c(cac_dax.cos, cac_dax.mic, cac_dax.dcor, cac_dax.ccor, cac_dax.rdc)
+c(cac_nk.cos, cac_nk.mic, cac_nk.dcor, cac_nk.ccor, cac_nk.rdc)
+c(dax_nk.cos, dax_nk.mic, dax_nk.dcor, dax_nk.ccor, dax_nk.rdc)
+
+sp_nk_dax
+sp_cac_dax
+sp_cac_nk
+cac_nk_dax
+
+sp_cac_nk_dax
