@@ -2,6 +2,7 @@
 
 cat("\014")
 source("algorithms.R")
+source("copulastatistic.R")
 
 rhoVal = 0.8
 
@@ -31,7 +32,7 @@ while (nbren <=2000) {
     
     s1=s1+cosdv(x,y)
     s2=s2+dcor(x,y)
-    s3=s3+mine(x,y)$MICe
+    s3=s3+mine(x,y)$MIC
     s4=s4+rdc(x,y)
     s5=s5+rcd(x,y)
     #print(cptsim)

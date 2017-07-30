@@ -16,7 +16,7 @@ power.ccor   = power_ccor   = array(NA, c(n_types,n_noise))
 
 for(ttt in c(1,2,3,4,6,7)){
   for(nnn in 1:n_noise){
-    fname <- paste("~/ownCloud/PhD/My Papers/CoS/software/results/result", k1, k2, n, ttt, nnn, sep="_")
+    fname <- paste("/home/kiran/reshef_power_results/result", k1, k2, n, ttt, nnn, sep="_")
     #fname <- paste("C:\\Users\\Kiran\\ownCloud\\PhD\\My Papers\\CoS\\software\\results\\result", k1, k2, n, ttt, nnn, sep="_")
     print(paste("Collecting", fname, "..."))
     if(file.exists(fname) == TRUE) load(fname)

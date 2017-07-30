@@ -94,12 +94,13 @@ run_reshef <- function(ttt,nnn) {
   save(power.ace, power.cor, 
        power.dcor, power.mine,
        power.rdc,power.tdc,power.cos,power.ccor,
-       file = paste("C:\\Users\\Kiran\\ownCloud\\PhD\\My Papers\\CoS\\software\\results\\result", k1, k2, n, ttt, nnn, sep="_"))
+       #file = paste("C:\\Users\\Kiran\\ownCloud\\PhD\\My Papers\\CoS\\software\\results\\result", k1, k2, n, ttt, nnn, sep="_"))
+       file = paste("/home/kiran/reshef_power_results/result", k1, k2, n, ttt, nnn, sep="_"))
 }
 
 #rm(list = ls())
-#setwd("~/ownCloud/PhD/My Papers/CoS/software")
-setwd("C:\\Users\\Kiran\\ownCloud\\PhD\\My Papers\\CoS\\software")
+setwd("/home/kiran/stochasticresearch/copulastatistic")
+#setwd("C:\\Users\\Kiran\\ownCloud\\PhD\\My Papers\\CoS\\software")
 
 source("algorithms.R")
 source("gentype.r")
